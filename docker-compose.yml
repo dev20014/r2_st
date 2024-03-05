@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  blog-abc:
+    build: ./test
+    command: python manage.py runserver 0.0.0.0:8002
+    volumes:
+      - ./test/:/longtran/blog_abc
+    ports:
+      - 8002:8002
+  
+  blog_person:
+    build: ./app
+    command: python manage.py runserver 0.0.0.0:8002
+    volumes:
+      - ./app/:/longtran/blog_person
+    ports:
+      - 8002:8002
